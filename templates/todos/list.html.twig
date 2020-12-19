@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TODO List !{% endblock %}
+
+{% block body %}
+    <h1 class="">TODO List</h1>
+    <div class="text-right mb-4">
+        <a href="/todos/new" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">ADD</a>
+    </div>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" width="1%"></th>
+                <th scope="col">Names</th>
+                <th scope="col" width="15%" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for todo in todos %}
+                <tr>
+                    <td>{{todo.id}}</td>
+                    <td>
+                        <a href="/todos/{{todo.id}}">{{todo.subject}}</a>
+                    </td>
+                    <td class="text-center">
+                        <a href="/todos/{{todo.id}}/edit" class="btn btn-outline-primary">Edit</a>
+                        <a href="/todos/{{todo.id}}/delete" class="btn btn-outline-danger" onclick="return confirm('Delete this todo?')">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

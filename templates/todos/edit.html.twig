@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TODO Edit !{% endblock %}
+
+{% block body %}
+    <h1>Edit this todo</h1>
+
+    {{ form(form) }}
+
+    <p><a href="/todos"><button type="button" class="btn btn-danger">Retour</button></a></p>
+{% endblock %}

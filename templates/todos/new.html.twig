@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %} ADD TODO !{% endblock %}
+
+{% block body %}
+    <h1>New TODO</h1>
+
+    {{ form(form) }}
+
+    <p><a href="/todos">Retour</a></p>
+{% endblock %}
